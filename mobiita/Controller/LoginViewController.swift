@@ -35,6 +35,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         self.passwordTextField.delegate = self
         self.passwordTextField.isSecureTextEntry = true
         self.initLoginBtn()
+        NotificationCenter.default.addObserver(self, selector: #selector(LoginViewController.checkValidLoginBtn), name: .UITextFieldTextDidChange, object: nil)
      
     }
     
@@ -50,13 +51,6 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     /// - Pareter sender: sender
     @IBAction func closeTapped(_ sender: Any) {
         self.navigationController?.dismiss(animated: true)
-    }
-    
-    // MARK: - delegate
-    
-    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
-        self.checkValidLoginBtn()
-        return true
     }
     
     /// リターン押下時に呼び出される処理
@@ -78,7 +72,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     
     /// ユーザー名とパスワードが入力されているか判定するメソッド
     /// どちらかが未入力であった場合、ログインボタンを押下できなくする
-    private func checkValidLoginBtn() {
+    func checkValidLoginBtn() {
         let userId = userIdTextField.text ?? ""
         let password = passwordTextField.text ?? ""
         if userId.isEmpty || password.isEmpty {     // どちらかが空白であった場合
