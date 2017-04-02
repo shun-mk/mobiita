@@ -16,6 +16,21 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var passwordTextField: UITextField!       // パスワードテキストエリア
     @IBOutlet weak var loginButton: UIButton!       // ログインボタン
     
+    /** qiitaAPIクライアントID */
+    let kClientId = "de1b2dd6bd71d8c71fbdce0e066562c759bcce9a"
+    /** QiitaクライントSecret */
+    let kClientSecret = "f6551191b43e82c3de17fa665da9f8ddd0a9c5b5"
+    /** 認証用サイトURL */
+    let kAuthUrl = "https://qiita.com/api/v2/oauth/authorize"
+    /** スコープ(クエリ) */
+    let kScope = "read_qiita"
+    /** State(クエリ) */
+    let kState = ""
+    /** クライアントIDキー */
+    let prefixCilentId = "client_id="
+    /** scopeキー */
+    let preficScope = "scope="
+    
     // MARK: - methods
     
     private func initLoginBtn() {
@@ -44,6 +59,10 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         // Dispose of any resources that can be recreated.
     }
     
+    deinit {
+        NotificationCenter.default.removeObserver(self)
+    }
+    
     // MARK: IBAction
     
     /// close押下時アクション
@@ -67,7 +86,15 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     
     /// ログインボタン押下時アクション
     func didTappedLoginBtn() {
-        
+        UIApplication.shared.openURL(self.genAuthUrl())
+    }
+    
+    /**
+     Auth認証用URL生成
+     - returns: URL
+     */
+    private func genAuthUrl() -> URL{
+        return URL(string: self.kAuthUrl + "?" + self.prefixCilentId + self.kClientId + "&" + self.preficScope + self.kScope)!
     }
     
     /// ユーザー名とパスワードが入力されているか判定するメソッド
