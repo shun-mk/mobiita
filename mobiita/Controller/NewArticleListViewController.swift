@@ -69,9 +69,7 @@ class NewArticleListViewController: UIViewController, UITableViewDelegate, UITab
     }
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        if self.tableView.contentOffset.y >= (self.tableView.contentSize.height - self.tableView.bounds.size.height) {
 
-        }
     }
     
 

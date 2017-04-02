@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16C67" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="mzQ-Lh-sSc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="mzQ-Lh-sSc">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -134,21 +134,19 @@
                                         <color key="tintColor" red="0.43529411759999997" green="0.4431372549" blue="0.47450980390000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <state key="normal" title="ログイン"/>
                                     </button>
-                                    <textField opaque="NO" clipsSubviews="YES" alpha="0.80000000000000004" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="ユーザーネーム" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ttK-yP-Q4F">
+                                    <textField opaque="NO" clipsSubviews="YES" alpha="0.80000000000000004" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="UserName" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ttK-yP-Q4F">
                                         <rect key="frame" x="40" y="46" width="295" height="30"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="30" id="cuA-tj-8mj"/>
                                         </constraints>
-                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="パスワード" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="VZ8-6K-thg">
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="VZ8-6K-thg">
                                         <rect key="frame" x="40" y="108" width="295" height="30"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="30" id="zqe-US-cwU"/>
                                         </constraints>
-                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
@@ -166,6 +164,7 @@
                                 </constraints>
                             </view>
                         </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="Z1x-JD-EYQ" secondAttribute="trailing" id="A6R-tc-7hF"/>
                             <constraint firstItem="Z1x-JD-EYQ" firstAttribute="centerY" secondItem="q1r-D6-9cF" secondAttribute="centerY" id="NhJ-rJ-ms5"/>
@@ -180,10 +179,9 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="backGroundView" destination="q1r-D6-9cF" id="FC3-uQ-yGa"/>
-                        <outlet property="inputPassword" destination="VZ8-6K-thg" id="hzj-qZ-XxF"/>
-                        <outlet property="inputUserId" destination="ttK-yP-Q4F" id="HoN-zB-wYp"/>
                         <outlet property="loginButton" destination="Uad-RK-VHg" id="tOE-8x-dFg"/>
+                        <outlet property="passwordTextField" destination="VZ8-6K-thg" id="KPj-Vo-k8C"/>
+                        <outlet property="userIdTextField" destination="ttK-yP-Q4F" id="yRm-TI-3FX"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="P04-8z-dtj" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -230,7 +228,7 @@
             <objects>
                 <tabBarController storyboardIdentifier="TopTabViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="2dS-Lt-Hjp" customClass="TopTabViewController" customModule="mobiita" customModuleProvider="target" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="p4y-tD-gd6">
-                        <barButtonItem key="rightBarButtonItem" systemItem="action" id="JsR-mO-sVN">
+                        <barButtonItem key="rightBarButtonItem" image="Login" id="JsR-mO-sVN">
                             <connections>
                                 <segue destination="tBm-xf-MKG" kind="presentation" id="DHm-H8-9GZ"/>
                             </connections>
@@ -252,4 +250,7 @@
             <point key="canvasLocation" x="590" y="10"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Login" width="36" height="36"/>
+    </resources>
 </document>
