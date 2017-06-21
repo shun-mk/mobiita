@@ -24,7 +24,6 @@
 		24332D2F1E174AA900AA2FAA /* TagItemModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24332D2E1E174AA900AA2FAA /* TagItemModel.swift */; };
 		24332D311E19595800AA2FAA /* TagItemModelContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24332D301E19595800AA2FAA /* TagItemModelContainer.swift */; };
 		24332D331E1AA8F900AA2FAA /* AlamofireImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 24332D321E1AA8F900AA2FAA /* AlamofireImage.framework */; };
-		243C90DB1DEF2569008C3969 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 243C90DA1DEF2569008C3969 /* LoginViewController.swift */; };
 		243C90DD1DF06CED008C3969 /* UIButton+Ex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 243C90DC1DF06CED008C3969 /* UIButton+Ex.swift */; };
 		245537331E23B3AC005C59FA /* PostingItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2455372F1E23B3AC005C59FA /* PostingItemTableViewCell.swift */; };
 		245537341E23B3AC005C59FA /* PostingItemTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 245537301E23B3AC005C59FA /* PostingItemTableViewCell.xib */; };
@@ -35,6 +34,7 @@
 		249F5A811DFB6E2C0034FD3A /* PostingItemModelContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 249F5A801DFB6E2C0034FD3A /* PostingItemModelContainer.swift */; };
 		249F5A831DFBC1090034FD3A /* BaseContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 249F5A821DFBC1090034FD3A /* BaseContainer.swift */; };
 		249F5A871DFBC57F0034FD3A /* BaseModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 249F5A861DFBC57F0034FD3A /* BaseModelProtocol.swift */; };
+		24B691441EFA9DE9003FE767 /* AuthorizationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24B691431EFA9DE9003FE767 /* AuthorizationManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -78,7 +78,6 @@
 		24332D2E1E174AA900AA2FAA /* TagItemModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TagItemModel.swift; path = Model/TagItemModel.swift; sourceTree = "<group>"; };
 		24332D301E19595800AA2FAA /* TagItemModelContainer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TagItemModelContainer.swift; path = Container/TagItemModelContainer.swift; sourceTree = "<group>"; };
 		24332D321E1AA8F900AA2FAA /* AlamofireImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AlamofireImage.framework; path = Carthage/Build/iOS/AlamofireImage.framework; sourceTree = "<group>"; };
-		243C90DA1DEF2569008C3969 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoginViewController.swift; path = Controller/LoginViewController.swift; sourceTree = "<group>"; };
 		243C90DC1DF06CED008C3969 /* UIButton+Ex.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIButton+Ex.swift"; path = "Extension/UIButton+Ex.swift"; sourceTree = "<group>"; };
 		2455372F1E23B3AC005C59FA /* PostingItemTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PostingItemTableViewCell.swift; path = View/Cell/PostingItemTableViewCell.swift; sourceTree = "<group>"; };
 		245537301E23B3AC005C59FA /* PostingItemTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = PostingItemTableViewCell.xib; path = View/Cell/PostingItemTableViewCell.xib; sourceTree = "<group>"; };
@@ -89,6 +88,7 @@
 		249F5A801DFB6E2C0034FD3A /* PostingItemModelContainer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PostingItemModelContainer.swift; path = Container/PostingItemModelContainer.swift; sourceTree = "<group>"; };
 		249F5A821DFBC1090034FD3A /* BaseContainer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BaseContainer.swift; path = Container/BaseContainer.swift; sourceTree = "<group>"; };
 		249F5A861DFBC57F0034FD3A /* BaseModelProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BaseModelProtocol.swift; path = Model/BaseModelProtocol.swift; sourceTree = "<group>"; };
+		24B691431EFA9DE9003FE767 /* AuthorizationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AuthorizationManager.swift; path = Util/AuthorizationManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -160,6 +160,7 @@
 		24117DFA1DE98E9900504E0E /* mobiita */ = {
 			isa = PBXGroup;
 			children = (
+				24B691421EFA9DA3003FE767 /* Util */,
 				247ABD361E09217A00662E8F /* View */,
 				249F5A7B1DF9B0CE0034FD3A /* Container */,
 				240BDADA1DED839C00635E43 /* Model */,
@@ -217,7 +218,6 @@
 				24117E311DEAA9A200504E0E /* TopTabViewController.swift */,
 				24117E331DEAAA0800504E0E /* NewArticleListViewController.swift */,
 				24117E351DEAAA2100504E0E /* TagListViewController.swift */,
-				243C90DA1DEF2569008C3969 /* LoginViewController.swift */,
 				245537391E23B8FC005C59FA /* WebViewController.swift */,
 			);
 			name = Controlller;
@@ -260,6 +260,14 @@
 				24332D301E19595800AA2FAA /* TagItemModelContainer.swift */,
 			);
 			name = Container;
+			sourceTree = "<group>";
+		};
+		24B691421EFA9DA3003FE767 /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				24B691431EFA9DE9003FE767 /* AuthorizationManager.swift */,
+			);
+			name = Util;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -427,7 +435,6 @@
 				249F5A831DFBC1090034FD3A /* BaseContainer.swift in Sources */,
 				249F5A871DFBC57F0034FD3A /* BaseModelProtocol.swift in Sources */,
 				24332D311E19595800AA2FAA /* TagItemModelContainer.swift in Sources */,
-				243C90DB1DEF2569008C3969 /* LoginViewController.swift in Sources */,
 				24117E3A1DEC8A2700504E0E /* UITableView+Ex.swift in Sources */,
 				24117E321DEAA9A200504E0E /* TopTabViewController.swift in Sources */,
 				249F5A811DFB6E2C0034FD3A /* PostingItemModelContainer.swift in Sources */,
@@ -437,6 +444,7 @@
 				240BDADC1DED862C00635E43 /* PostingItemModel.swift in Sources */,
 				24117DFC1DE98E9900504E0E /* AppDelegate.swift in Sources */,
 				240BDAD91DED7DC000635E43 /* Const.swift in Sources */,
+				24B691441EFA9DE9003FE767 /* AuthorizationManager.swift in Sources */,
 				245537331E23B3AC005C59FA /* PostingItemTableViewCell.swift in Sources */,
 				245537351E23B3AC005C59FA /* TagItemTableViewCell.swift in Sources */,
 			);

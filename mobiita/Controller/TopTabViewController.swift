@@ -36,6 +36,13 @@ class TopTabViewController: UITabBarController {
         }
     }
     
+    // MARK: - IBAction
+    
+    @IBAction func loginButtonTapped(_ sender: Any) {
+        AuthorizationManager.openOAuthUrl()
+    }
+    
+    
     // MARK: - override
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -47,6 +54,8 @@ class TopTabViewController: UITabBarController {
             vc.url = url
         }
     }
+    
+    // MARK: - Property
     
     /** 記事選択ハンドラー処理 */
     var selectArticleHandler: ((_ url: String) -> ())?
