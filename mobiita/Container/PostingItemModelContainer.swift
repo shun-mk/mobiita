@@ -15,7 +15,7 @@ class PostingItemModelContainer: BaseContainer<PostingItemModel> {
     /// データ取得
     ///
     /// - Parameter dataLoadResultHandler: 通信完了コールバック
-    func fetchData(page: String?, perPage: String?, query: String?, completionHandler: @escaping connectionResultHandler) {
+    func fetchData(page: String?, perPage: String?, query: String?, completionHandler: @escaping ConnectionResultHandler) {
         ConnectionManager.sharedInstance.getItemListApi(page: page, perPage: perPage, query: query, completionHandler: { data in
             if data.result.isSuccess {
                 guard let data = data.result.value as? [[String: Any]] else {
@@ -43,7 +43,7 @@ class PostingItemModelContainer: BaseContainer<PostingItemModel> {
     ///   - perPage: 要素数
     ///   - query: クエリ
     ///   - completionHandler: 通信完了後コールバック
-    func fetchAdditionalData(page: String?, perPage: String?, query: String?, completionHandler: @escaping connectionResultHandler) {
+    func fetchAdditionalData(page: String?, perPage: String?, query: String?, completionHandler: @escaping ConnectionResultHandler) {
         ConnectionManager.sharedInstance.getItemListApi(page: page, perPage: perPage, query: query) { (data) in
             if data.result.isSuccess {
                 guard let data = data.result.value as? [[String: Any]] else {

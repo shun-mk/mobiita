@@ -20,7 +20,7 @@ class TagItemModelContainer: BaseContainer<TagItemModel> {
     ///   - perPage: リクエスト要素数
     ///   - query: クエリ
     ///   - completion: データ取得完了後コールバック
-    func featchData(_ page: String?, perPage: String?, sort: String?, completionHandler: @escaping connectionResultHandler) {
+    func featchData(_ page: String?, perPage: String?, sort: String?, completionHandler: @escaping ConnectionResultHandler) {
         ConnectionManager.sharedInstance.getTagListApi(page: page, perPage: perPage, sort: sort) { (data) in
             if data.result.isSuccess {
                 guard let data = data.result.value as? [[String: Any]] else {

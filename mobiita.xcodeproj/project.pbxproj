@@ -35,6 +35,8 @@
 		249F5A831DFBC1090034FD3A /* BaseContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 249F5A821DFBC1090034FD3A /* BaseContainer.swift */; };
 		249F5A871DFBC57F0034FD3A /* BaseModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 249F5A861DFBC57F0034FD3A /* BaseModelProtocol.swift */; };
 		24B691441EFA9DE9003FE767 /* AuthorizationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24B691431EFA9DE9003FE767 /* AuthorizationManager.swift */; };
+		24B691461EFFEC03003FE767 /* AccessTokenModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24B691451EFFEC03003FE767 /* AccessTokenModel.swift */; };
+		24B691481EFFFA7E003FE767 /* UserDefaultsUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24B691471EFFFA7E003FE767 /* UserDefaultsUtility.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -89,6 +91,8 @@
 		249F5A821DFBC1090034FD3A /* BaseContainer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BaseContainer.swift; path = Container/BaseContainer.swift; sourceTree = "<group>"; };
 		249F5A861DFBC57F0034FD3A /* BaseModelProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BaseModelProtocol.swift; path = Model/BaseModelProtocol.swift; sourceTree = "<group>"; };
 		24B691431EFA9DE9003FE767 /* AuthorizationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AuthorizationManager.swift; path = Util/AuthorizationManager.swift; sourceTree = "<group>"; };
+		24B691451EFFEC03003FE767 /* AccessTokenModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AccessTokenModel.swift; path = Model/AccessTokenModel.swift; sourceTree = "<group>"; };
+		24B691471EFFFA7E003FE767 /* UserDefaultsUtility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserDefaultsUtility.swift; path = Util/UserDefaultsUtility.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -132,6 +136,7 @@
 				240BDADB1DED862C00635E43 /* PostingItemModel.swift */,
 				249F5A861DFBC57F0034FD3A /* BaseModelProtocol.swift */,
 				24332D2E1E174AA900AA2FAA /* TagItemModel.swift */,
+				24B691451EFFEC03003FE767 /* AccessTokenModel.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -266,6 +271,7 @@
 			isa = PBXGroup;
 			children = (
 				24B691431EFA9DE9003FE767 /* AuthorizationManager.swift */,
+				24B691471EFFFA7E003FE767 /* UserDefaultsUtility.swift */,
 			);
 			name = Util;
 			sourceTree = "<group>";
@@ -441,7 +447,9 @@
 				24117E2A1DE9B98F00504E0E /* ConnectionManager.swift in Sources */,
 				24117E361DEAAA2100504E0E /* TagListViewController.swift in Sources */,
 				24117E341DEAAA0800504E0E /* NewArticleListViewController.swift in Sources */,
+				24B691461EFFEC03003FE767 /* AccessTokenModel.swift in Sources */,
 				240BDADC1DED862C00635E43 /* PostingItemModel.swift in Sources */,
+				24B691481EFFFA7E003FE767 /* UserDefaultsUtility.swift in Sources */,
 				24117DFC1DE98E9900504E0E /* AppDelegate.swift in Sources */,
 				240BDAD91DED7DC000635E43 /* Const.swift in Sources */,
 				24B691441EFA9DE9003FE767 /* AuthorizationManager.swift in Sources */,

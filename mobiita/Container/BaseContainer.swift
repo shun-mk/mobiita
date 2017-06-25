@@ -8,7 +8,7 @@
 
 import Foundation
 import Alamofire
-typealias connectionResultHandler = (_ result: ConnectResult) -> ()
+typealias ConnectionResultHandler = (_ result: ConnectResult) -> ()
 
 class BaseContainer<T: BaseModelProtocol> {
     

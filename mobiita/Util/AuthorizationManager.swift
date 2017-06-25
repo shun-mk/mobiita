@@ -26,6 +26,18 @@ final class AuthorizationManager {
         UIApplication.shared.openURL(url)
     }
     
+    
+    /// アクセストークン取得用コード生成
+    ///
+    /// - Parameter arg: コードが含まれている文字列
+    class func genCode(_ arg: String) -> String {
+        guard arg.contains("code=") else {
+            return ""
+        }
+        var strArr = arg.components(separatedBy: "=")
+        return strArr[1]
+    }
+    
     // MARK: - Property
     
     /** qiitaAPIクライアントID */

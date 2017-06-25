@@ -15,15 +15,35 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+        
         return true
     }
     
     func application(_ app: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey : Any] = [:]) -> Bool {
-        print(url)
-        print(options)
+        guard let query = url.query else {
+            return true
+        }
+        
+        let code = AuthorizationManager.genCode(query)
+        guard code.characters.count > 0 else {
+            return true
+        }
+        
+        fetchAccessToken(code: code)
         
         return true
+    }
+    ;
+    private func fetchAccessToken(code: String) {
+        AccessTokenModel().fetchData(clientId: AuthorizationManager.kClientId, clientSecret: AuthorizationManager.kClientSecret, code: code) { (result) in
+            switch result {
+            case .success:
+                break
+            case .failed:
+                // TODO: - Failed挙動
+                break
+            }
+        }
     }
 }
 

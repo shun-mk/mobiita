@@ -21,6 +21,18 @@ typealias completionHandler = (_ data: DataResponse<Any>) -> ()
 
 class ConnectionManager {
     
+    func getAccessToken(clientId: String, clientSecret: String, code: String, completionHandler: @escaping completionHandler) {
+        
+        var parameters = [String: Any]()
+        setDicParameter(&parameters, key: "client_id", parameter: clientId)
+        setDicParameter(&parameters, key: "client_secret", parameter: clientSecret)
+        setDicParameter(&parameters, key: "code", parameter: code)
+
+        Alamofire.request(ConnectionManager.getAccessTokenUrl, method: .post, parameters: parameters, encoding: JSONEncoding.default).responseJSON { (responseData) in
+            completionHandler(responseData)
+        }
+    }
+    
     // MARK: - Method
     
     /// 投稿一覧取得API
@@ -37,8 +49,8 @@ class ConnectionManager {
         self.setDicParameter(&parameters, key: "per_page", parameter: perPage)
         self.setDicParameter(&parameters, key: "query", parameter: query)
 
-        Alamofire.request(ConnectionManager.getItemListUrl, method: .get, parameters: parameters).responseJSON { (DataResponse) in
-            completionHandler(DataResponse)
+        Alamofire.request(ConnectionManager.getItemListUrl, method: .get, parameters: parameters).responseJSON { (responseData) in
+            completionHandler(responseData)
         }
     }
     
@@ -58,8 +70,8 @@ class ConnectionManager {
         self.setDicParameter(&parameters, key: "sort", parameter: sort)
         
         
-        Alamofire.request(ConnectionManager.getTagListUrl, method: .get, parameters: parameters).responseJSON { (DataResponse) in
-            completionHandler(DataResponse)
+        Alamofire.request(ConnectionManager.getTagListUrl, method: .get, parameters: parameters).responseJSON { (responseData) in
+            completionHandler(responseData)
         }
     }
     
@@ -77,6 +89,7 @@ class ConnectionManager {
         parameters[key] = parameter
     }
     
+    
     // MARK: Property
     
     private init () {}
@@ -86,4 +99,6 @@ class ConnectionManager {
     static let getItemListUrl = Const.kPath + "items"
     
     static let getTagListUrl = Const.kPath + "tags"
+    /** アクセストークン取得APIURL */
+    static let getAccessTokenUrl = Const.kPath + "access_tokens"
 }

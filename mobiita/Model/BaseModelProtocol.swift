@@ -10,7 +10,7 @@ import Foundation
 
 /** 
  各モデルが準拠しなくてはいけないプロトコル
- これを準拠しないとBaseConteinerクラスを継承したContainerを実装できない
+ これを準拠しないとBaseContainerクラスを継承したContainerを実装できない
  */
 protocol BaseModelProtocol {
     
